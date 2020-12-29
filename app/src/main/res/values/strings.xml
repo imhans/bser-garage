@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WebConnect</string>
+    <string name="XAPIKEY">x-api-key</string>
+    <string name="APIKEY">agFxyGgRR38dzOKU73vzU1AvG9oDovLf1wfFhQxa</string>
 </resources>
