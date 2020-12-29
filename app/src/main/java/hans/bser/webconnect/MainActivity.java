@@ -26,8 +26,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    final static String BESR_ITEM_URL = "http://api.playeternalreturn.com/";
-    String urlString = BESR_ITEM_URL + "aesop/item/all";
+    final static String BESR_ITEM_URL = "https://open-api.bser.io/v1/data/";
+    String urlString = BESR_ITEM_URL + "Character";
     String str, result;
     TextView txt;
     String name;
@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
                     //Create Connection
                     HttpURLConnection mConnection = (HttpURLConnection) aesop.openConnection();
+                    //Add Headers
+                    mConnection.setRequestProperty("x-api-key", "agFxyGgRR38dzOKU73vzU1AvG9oDovLf1wfFhQxa");
 
                     //Check Connection
                     if ( mConnection.getResponseCode() == 200 ) {
@@ -60,15 +62,16 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         result = buffer.toString();
-                        Log.d("result", result);
+                        //Log.d("result", result);
                         reader.close();
 
                         //Get JSON Array
-                        JSONArray jsonArray = new JSONArray(result);
+                        JSONObject jsonObject = new JSONObject(result);
+                        JSONArray jsonArray = jsonObject.getJSONArray("data");
 
                         List<String> itemList = new ArrayList<String>();
                         for (int i = 0; i < jsonArray.length(); i++) {
-                            itemList.add(jsonArray.getJSONObject(i).getString("Name"));
+                            itemList.add(jsonArray.getJSONObject(i).getString("name"));
                         }
                         name = itemList.toString();
                         Log.d("name", name);
