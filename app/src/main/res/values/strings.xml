@@ -2,4 +2,6 @@
     <string name="app_name">BSER Garage</string>
     <string name="XAPIKEY">x-api-key</string>
     <string name="APIKEY">agFxyGgRR38dzOKU73vzU1AvG9oDovLf1wfFhQxa</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,4 +1,4 @@
-package hans.bser.webconnect;
+package hans.bser.garage;
 
 import android.content.Context;
 

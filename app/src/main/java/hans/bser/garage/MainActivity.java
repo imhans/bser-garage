@@ -1,13 +1,19 @@
-package hans.bser.webconnect;
+package hans.bser.garage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
+
+import web.WebTask;
 
 public class MainActivity extends AppCompatActivity {
 
     final static String BESR_ITEM_URL = "https://open-api.bser.io/v1/data/";
+    Button btnCharacter;
+    Button btnItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +23,14 @@ public class MainActivity extends AppCompatActivity {
         WebTask webTask = new WebTask(BESR_ITEM_URL, "Character");
         webTask.execute();
 
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
+        btnCharacter = findViewById(R.id.btnCharacter);
+        btnItem = findViewById(R.id.btnItem);
 
+        btnCharacter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCharacter = new Intent(getApplicationContext(), CharacterActivity.class);
+                startActivity(intentCharacter);
             }
         });
 

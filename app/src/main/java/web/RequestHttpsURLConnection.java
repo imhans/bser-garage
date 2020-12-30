@@ -1,4 +1,4 @@
-package hans.bser.webconnect;
+package web;
 
 import android.util.Log;
 
