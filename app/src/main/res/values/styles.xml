@@ -6,4 +6,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="kanitButton" parent="android:Widget.Button">
+        <item name="android:fontFamily">@font/kanit</item>
+        <item name="android:textSize">18dp</item>
+    </style>
 </resources>
