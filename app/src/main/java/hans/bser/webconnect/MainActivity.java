@@ -8,15 +8,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     final static String BESR_ITEM_URL = "https://open-api.bser.io/v1/data/";
-    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        txt = findViewById(R.id.txtView);
-        txt.setText("BSER");
 
         WebTask webTask = new WebTask(BESR_ITEM_URL, "Character");
         webTask.execute();
